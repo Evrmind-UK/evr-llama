@@ -117,8 +117,6 @@ Each archive contains:
 | Model | Base | Use Case |
 |-------|------|----------|
 | [EVR-1 Maano-8b](https://huggingface.co/evrmind/evr-1-maano-8b) | Llama 3.1 8B | Text completion, creative writing |
-| [EVR-1 Maano-8b-Instruct](https://huggingface.co/evrmind/evr-1-maano-8b-instruct) | Llama 3.1 8B Instruct | Chat, instruction following |
-| [EVR-1 Bafethu-8b-Reasoning](https://huggingface.co/evrmind/evr-1-bafethu-8b-reasoning) | DeepSeek R1 Distill Llama 8B | Math, logic, coding |
 
 ## System Requirements
 
