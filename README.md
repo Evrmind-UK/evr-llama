@@ -2,6 +2,13 @@
 
 Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) GGUF models locally. Built from [llama.cpp](https://github.com/ggerganov/llama.cpp) with EVR compression support.
 
+EVR (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. On standard benchmarks, EVR achieves near-parity with industry-standard quantizations refined over years by the open-source llama.cpp community.
+
+| Benchmark | EVR (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
+|-----------|----------------|--------------------|--------------------|
+| ARC-Challenge (25-shot, 1172q) | 59.8% | 60.8% | 61.3% |
+| Perplexity (wikitext-2) | 6.19 | 6.13 | 5.74 |
+
 ## Supported Platforms
 
 | Platform | Archive | GPU |
@@ -99,8 +106,8 @@ Each archive contains:
 | Model | Base | Use Case |
 |-------|------|----------|
 | [EVR-1 Maano-8b](https://huggingface.co/evrmind/evr-1-maano-8b) | Llama 3.1 8B | Text completion, creative writing |
-| EVR-1 Maano-8b-Instruct (coming soon) | Llama 3.1 8B Instruct | Chat, instruction following |
-| EVR-1 Bafethu-8b-Reasoning (coming soon) | DeepSeek R1 Distill Llama 8B | Math, logic, coding |
+| [EVR-1 Maano-8b-Instruct](https://huggingface.co/evrmind/evr-1-maano-8b-instruct) | Llama 3.1 8B Instruct | Chat, instruction following |
+| [EVR-1 Bafethu-8b-Reasoning](https://huggingface.co/evrmind/evr-1-bafethu-8b-reasoning) | DeepSeek R1 Distill Llama 8B | Math, logic, coding |
 
 ## System Requirements
 
