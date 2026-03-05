@@ -8,7 +8,7 @@ Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) G
 |----------|---------|-----|
 | Linux + NVIDIA | `evrmind-linux-cuda.tar.gz` | CUDA 12 |
 | Linux + Any GPU | `evrmind-linux-vulkan.tar.gz` | Vulkan |
-| macOS Apple Silicon | `evrmind-macos-metal.tar.gz` | M1/M2/M3/M4 |
+| macOS (Apple Silicon) | `evrmind-macos-metal.tar.gz` | Apple Silicon |
 | Windows + NVIDIA | `evrmind-windows-cuda.zip` | CUDA 12 |
 | Windows + Any GPU | `evrmind-windows-vulkan.zip` | Vulkan |
 | Android (Termux) | `evrmind-android-vulkan.tar.gz` | Vulkan |
@@ -19,19 +19,44 @@ Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) G
 2. Download the binary for your platform from [Releases](https://github.com/evrmind-uk/evr-llama/releases/tag/v1.0.0)
 3. Extract and run:
 
+**Linux (CUDA):**
+
 ```bash
-# Linux (CUDA)
-tar xzf evrmind-linux-cuda.tar.gz
+mkdir -p linux-cuda && tar xzf evrmind-linux-cuda.tar.gz -C linux-cuda
 cd linux-cuda
 LD_LIBRARY_PATH=. ./llama-cli -m /path/to/model.gguf -ngl 99
+```
 
-# macOS (Metal)
-tar xzf evrmind-macos-metal.tar.gz
+**macOS (Apple Silicon):**
+
+```bash
+mkdir -p metal && tar xzf evrmind-macos-metal.tar.gz -C metal
 cd metal
 ./llama-cli -m /path/to/model.gguf -ngl 99
 ```
 
+**Windows (CUDA):**
+
+Extract `evrmind-windows-cuda.zip` into a folder called `windows-cuda`, then:
+
+```cmd
+cd windows-cuda
+llama-cli.exe -m \path\to\model.gguf -ngl 99
+```
+
+**Android (Termux):**
+
+```bash
+mkdir -p android-vulkan && tar xzf evrmind-android-vulkan.tar.gz -C android-vulkan
+cd android-vulkan
+LD_LIBRARY_PATH=. ./llama-cli -m /path/to/model.gguf -ngl 99
+```
+
 The same binaries work with all EVR-1 models. Just point them at whichever GGUF you want to run.
+
+## Web UI
+
+Each model repository on HuggingFace includes a `start-server.sh` (Linux/macOS/Android) and `start-server.bat` (Windows) that launches a browser-based chat interface on http://localhost:8080. See the model README for details.
 
 ## Included Binaries
 
@@ -59,8 +84,8 @@ Each archive contains:
 ## System Requirements
 
 - 6 GiB RAM minimum (8 GiB recommended)
-- GPU recommended for usable speeds (NVIDIA CUDA 12, Apple Metal, or Vulkan)
-- CPU-only mode is supported but slower
+- GPU recommended for usable speeds (NVIDIA CUDA 12, Apple Silicon, or Vulkan)
+- CPU-only mode is supported but slower (use `-ngl 0`)
 
 ## License
 
