@@ -2,12 +2,23 @@
 
 Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) GGUF models locally. Built from [llama.cpp](https://github.com/ggerganov/llama.cpp) with EVR compression support.
 
-EVR (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. On standard benchmarks, EVR achieves near-parity with industry-standard quantizations refined over years by the open-source llama.cpp community.
+EVR (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. **At 3.93 GiB, standard quantizations collapse into repetition. EVR produces coherent text at 1000+ tokens.**
+
+### Coherence (lower is better)
+
+| Generation length | EVR (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
+|-------------------|----------------|--------------------|--------------------|
+| 6 prompts @ 500 tokens | **0.64%** rep4 | 52.92% | 36.92% |
+| 2 prompts @ 1000 tokens | **1.53%** rep4 | 36.15% | 54.87% |
+
+### Accuracy
 
 | Benchmark | EVR (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
 |-----------|----------------|--------------------|--------------------|
 | ARC-Challenge (25-shot, 1172q) | 59.8% | 60.8% | 61.3% |
 | Perplexity (wikitext-2) | 6.19 | 6.13 | 5.74 |
+
+Near-parity on accuracy, dramatically better coherence. See the individual model pages for full benchmark details.
 
 ## Supported Platforms
 
