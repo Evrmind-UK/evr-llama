@@ -1,19 +1,19 @@
 # EVR-1 Llama Runtime Binaries
 
-Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) GGUF models locally. Built from [llama.cpp](https://github.com/ggerganov/llama.cpp) with EVR compression support.
+Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) GGUF models locally. Built from [llama.cpp](https://github.com/ggerganov/llama.cpp) with EVR-1 compression support.
 
-EVR (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. **At 3.93 GiB, standard quantizations collapse into repetition. EVR produces coherent text at 1000+ tokens.**
+EVR-1 (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. **At 3.93 GiB, standard quantizations collapse into repetition. EVR-1 produces coherent text at 1000+ tokens.**
 
 ### Coherence (lower is better)
 
-| Generation length | EVR (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
+| Generation length | EVR-1 (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
 |-------------------|----------------|--------------------|--------------------|
 | 6 prompts @ 500 tokens | **0.64%** rep4 | 52.92% | 36.92% |
 | 2 prompts @ 1000 tokens | **1.53%** rep4 | 36.15% | 54.87% |
 
 ### Accuracy
 
-| Benchmark | EVR (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
+| Benchmark | EVR-1 (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
 |-----------|----------------|--------------------|--------------------|
 | ARC-Challenge (25-shot, 1172q) | 59.8% | 60.8% | 61.3% |
 | Perplexity (wikitext-2) | 6.19 | 6.13 | 5.74 |
@@ -126,7 +126,7 @@ Each archive contains:
 
 ## Build Info
 
-These binaries are built from llama.cpp (commit b5549, 2026-02) with added support for EVR tensor types. The `llama-completion` binary is a custom addition for single-shot text completion.
+These binaries are built from llama.cpp (commit b5549, 2026-02) with added support for EVR-1 tensor types. The `llama-completion` binary is a custom addition for single-shot text completion.
 
 ## License
 
