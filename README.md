@@ -1,4 +1,4 @@
-# EVR-Llama Runtime Binaries
+# EVR-1 Llama Runtime Binaries
 
 Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) GGUF models locally. Built from [llama.cpp](https://github.com/ggerganov/llama.cpp) with EVR compression support.
 
