@@ -2,23 +2,24 @@
 
 Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) GGUF models locally. Built from [llama.cpp](https://github.com/ggerganov/llama.cpp) with EVR-1 compression support.
 
-EVR-1 (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. **At 3.93 GiB, standard quantizations collapse into repetition. EVR-1 produces coherent text at 1000+ tokens.**
+EVR-1 (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. **At 3.93 GiB, standard quantizations collapse into repetition. EVR-1 produces coherent text at 1000+ tokens — 5.83% repetition vs 77% for Q3_K_M at the same size.**
 
 ### Coherence (lower is better)
 
 | Generation length | EVR-1 (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
 |-------------------|----------------|--------------------|--------------------|
-| 6 prompts @ 500 tokens | **0.64%** rep4 | 52.92% | 36.92% |
-| 2 prompts @ 1000 tokens | **1.53%** rep4 | 36.15% | 54.87% |
+| 5 prompts @ 500 tokens | **5.83%** rep4 | 76.79% | 79.45% |
+| 5 prompts @ 1000 tokens | **19.68%** rep4 | 87.65% | 89.69% |
 
 ### Accuracy
 
 | Benchmark | EVR-1 (3.93 GiB) | Q3_K_M (3.83 GiB) | Q4_K_M (4.69 GiB) |
 |-----------|----------------|--------------------|--------------------|
 | ARC-Challenge (25-shot, 1172q) | 59.8% | 60.8% | 61.3% |
-| Perplexity (wikitext-2) | 6.19 | 6.13 | 5.74 |
+| Perplexity (wikitext-2, ctx=512) | 6.70 | 7.02 | 6.58 |
+| Perplexity (wikitext-2, ctx=2048) | 6.19 | 6.13 | 5.74 |
 
-Near-parity on accuracy, dramatically better coherence. See the individual model pages for full benchmark details.
+Near-parity on accuracy, dramatically better coherence. Perplexity varies with context size — at the default context (512), EVR-1 outperforms Q3_K_M. See the individual model pages for full benchmark details.
 
 ## Supported Platforms
 
