@@ -131,7 +131,9 @@ These binaries are built from llama.cpp (commit b5549, 2026-02) with added suppo
 
 ## License
 
-MIT License (see [LICENSE](LICENSE)). Built from llama.cpp with modifications by Evrmind. Model-specific license terms are available in each model's HuggingFace repository.
+**Free to use for any purpose** — personal, research, commercial, or otherwise. No restrictions on use.
+
+Binaries are built from llama.cpp (MIT License) with modifications by Evrmind. Model-specific license terms (including Meta's Llama 3.1 Community License) are available in each model's HuggingFace repository. See [LICENSE](LICENSE) for full terms.
 
 ## Contact
 
