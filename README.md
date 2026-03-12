@@ -127,7 +127,7 @@ Each archive contains:
 
 ## Build Info
 
-These binaries are built from llama.cpp (commit b5549, 2026-02) with added support for EVR-1 tensor types. The `llama-completion` binary is a custom addition for single-shot text completion.
+These binaries are built from llama.cpp with added support for EVR-1 tensor types. The `llama-completion` binary is a custom addition for single-shot text completion.
 
 ## License
 
