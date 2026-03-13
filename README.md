@@ -2,7 +2,7 @@
 
 Pre-built binaries for running [Evrmind EVR-1](https://huggingface.co/evrmind) GGUF models locally. Built from [llama.cpp](https://github.com/ggerganov/llama.cpp) with EVR-1 compression support.
 
-EVR-1 (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. **At 3.93 GiB, standard quantizations collapse into repetition. EVR-1 produces coherent text at 1000+ tokens — 5.83% repetition vs 77% for Q3_K_M at the same size.**
+EVR-1 (Evrmind Reconstruction) is a novel compression method developed independently by Evrmind. **At 3.93 GiB, standard quantizations collapse into repetition. EVR-1 produces coherent text at 1000+ tokens  - 5.83% repetition vs 77% for Q3_K_M at the same size.**
 
 ### Coherence (lower is better)
 
@@ -19,7 +19,7 @@ EVR-1 (Evrmind Reconstruction) is a novel compression method developed independe
 | Perplexity (wikitext-2, ctx=512) | 6.70 | 7.02 | 6.58 |
 | Perplexity (wikitext-2, ctx=2048) | 6.19 | 6.13 | 5.74 |
 
-Near-parity on accuracy, dramatically better coherence. Perplexity varies with context size — at the default context (512), EVR-1 outperforms Q3_K_M. See the individual model pages for full benchmark details.
+Near-parity on accuracy, dramatically better coherence. Perplexity varies with context size  - at the default context (512), EVR-1 outperforms Q3_K_M. See the individual model pages for full benchmark details.
 
 ## Supported Platforms
 
@@ -117,7 +117,9 @@ Each archive contains:
 
 | Model | Base | Use Case |
 |-------|------|----------|
-| [EVR-1 Maano-8b](https://huggingface.co/evrmind/evr-1-maano-8b) | Llama 3.1 8B | Text completion, creative writing |
+| [EVR-1 Maano-8b](https://huggingface.co/Evrmind/EVR-1-Maano-8b) | Llama 3.1 8B | Text completion, creative writing |
+| [EVR-1 Maano-8b-Instruct](https://huggingface.co/Evrmind/EVR-1-Maano-8b-Instruct) | Llama 3.1 8B Instruct | Chat, instruction following, assistants |
+| [EVR-1 Bafethu-8b-Reasoning](https://huggingface.co/Evrmind/EVR-1-Bafethu-8b-Reasoning) | DeepSeek-R1-Distill-Llama-8B | Chain-of-thought reasoning, maths, code |
 
 ## System Requirements
 
